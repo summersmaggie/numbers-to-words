@@ -42,6 +42,10 @@ class Number
 
     if @number == 0
       digit_names.fetch(@number)
+    elsif @number < 11
+      digit_names.fetch((number_array[0].to_i))
+    elsif @number < 20
+      digit_names.fetch((number_array[1] + number_array[0]).to_i)
     elsif number_length < 3
       digit_names.fetch((number_array[1] + "0").to_i).to_s + " " + digit_names.fetch(number_array[0].to_i).to_s
       # binding.pry
